@@ -1,0 +1,25 @@
+<div>
+	<h3>Example of ngIf directive</h3>
+	<button class="btn btn-primary" (click)= "displayText()">Show Hidden Text</button>
+	<p *ngIf="showText">This paragraph is created with the help of ng-if directive.</p>
+</div>
+
+<div>
+	<h3>Example of ngIf directive with else condition</h3>
+	<button class="btn btn-primary" (click)= "displayTextagain()">Change server status</button>
+	<p *ngIf="showTextagain; else noServer">This paragraph is created with the help of ng-if directive.</p>
+	<ng-template #noServer>
+		<p>No Server was created!</p>
+	</ng-template>
+</div>
+
+<div>
+	<h3>Example of ngStyle and ngClass directives</h3>
+	<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'Online'}">Server is {{serverStatus}}.</p>
+</div>
+
+<div>
+	<h3>Example of ngfor directives</h3>
+	<button class="btn btn-primary" (click)= "addText()">Add Text below</button>
+	<app-server *ngFor="let server of servers"></app-server>
+</div>
